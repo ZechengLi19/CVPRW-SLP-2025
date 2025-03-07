@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 ## 📚 Preparation
-The pre-extracted data is available [here](https://huggingface.co/ZechengLi19/CVPRW-SLP-2025). 
+The pre-extracted data is available [here](https://huggingface.co/ZechengLi19/CVPRW-SLP-2025/tree/main). 
 
 ## 🚀 Training & Evaluation
 If you have not downloaded the aforementioned pre-extracted data, you can reproduce the experimental results by following the procedures outlined below. If you have downloaded them, proceed directly to Step 5.
