@@ -18,5 +18,5 @@ with open('./secretTestSet500.txt', 'r', encoding='utf-8') as file:
         idx+=1
         
 
-with gzip.open('phoenix-2014t.test', 'wb') as f:
+with gzip.open('phoenix-2014t-cvprw.test', 'wb') as f:
     pickle.dump(data, f)
