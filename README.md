@@ -16,14 +16,13 @@ pip install -r requirements.txt
 The pre-extracted data is available [here](https://huggingface.co/ZechengLi19/CVPRW-SLP-2025). 
 
 ## 🚀 Training & Evaluation
-If you have not downloaded the aforementioned pre-extracted data, you can reproduce the experimental results by following the procedures outlined below. If you have downloaded them, proceed directly to Step 4.
-1. To train the **Gloss2Text** model, please follow the instructions provided in the [Spoken2Sign](https://github.com/FangyunWei/SLRT/tree/main/Spoken2Sign) repository.  
-2. To train the **Sign2Gloss** model, please refer to the instructions in the [TwoStreamNetwork](https://github.com/FangyunWei/SLRT/tree/main/TwoStreamNetwork) repository.  
-3. To **construct gloss-pose paired data**, follow the instructions in the [Spoken2Sign](https://github.com/FangyunWei/SLRT/tree/main/Spoken2Sign) repository.  
-4. Once completed, you can run the following script to obtain the final results:  
-```bash
-python main.py
-```
+If you have not downloaded the aforementioned pre-extracted data, you can reproduce the experimental results by following the procedures outlined below. If you have downloaded them, proceed directly to Step 5.
+1. To train the **Text2Gloss** model, please follow the instructions provided in the [Spoken2Sign](https://github.com/FangyunWei/SLRT/tree/main/Spoken2Sign) repository.  
+2. To **predict Text2Gloss result**, please follow the instructions in the [Spoken2Sign](https://github.com/FangyunWei/SLRT/tree/main/Spoken2Sign) repository. Specifically, you need to execute the command `python prediction.py --config=${config_file}` as instructed. Prior to this step, run `python replace_text.py` to replace the first 500 text samples in the test set with the challenging set texts, enabling the generation of corresponding text outputs. The output results will be stored in `T2G/prediction/test/phoenix_results.pkl`. Please rename this file to `phoenix_text2gloss_results.pkl`.
+3. To train the **Sign2Gloss** model, please refer to the instructions in the [TwoStreamNetwork](https://github.com/FangyunWei/SLRT/tree/main/TwoStreamNetwork) repository.
+4. To **construct the gloss-pose pairs** model, please refer to the instructions provided in the [Spoken2Sign](https://github.com/FangyunWei/SLRT/tree/main/Spoken2Sign) repository to obtain the `phoenix_iso.train` file. Then, run `python gen_segment.py` to generate the final gloss-pose pairs.
+5. Once completed, you can run `python main.py` to obtain the final results: 
+
 
 ## 📫 Contact
 If you have any questions, please feel free to contact Zecheng Li (lizecheng19@gmail.com). Thank you.
